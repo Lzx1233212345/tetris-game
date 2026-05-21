@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>俄罗斯方块</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="game-title">俄罗斯方块</h1>
+        
+        <div class="game-wrapper">
+            <!-- 游戏主区域 -->
+            <div class="game-board">
+                <canvas id="gameCanvas" width="200" height="400"></canvas>
+            </div>
+            
+            <!-- 右侧信息面板 -->
+            <div class="info-panel">
+                <!-- 下一个方块预览 -->
+                <div class="next-block">
+                    <h3>下一个</h3>
+                    <canvas id="nextCanvas" width="100" height="100"></canvas>
+                </div>
+                
+                <!-- 分数显示 -->
+                <div class="score-panel">
+                    <div class="score-item">
+                        <span class="label">分数</span>
+                        <span class="value" id="score">0</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="label">等级</span>
+                        <span class="value" id="level">1</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="label">消除行数</span>
+                        <span class="value" id="lines">0</span>
+                    </div>
+                </div>
+                
+                <!-- 控制按钮 -->
+                <div class="controls">
+                    <button id="startBtn" class="btn btn-start">开始游戏</button>
+                    <button id="pauseBtn" class="btn btn-pause">暂停</button>
+                    <button id="restartBtn" class="btn btn-restart">重新开始</button>
+                </div>
+                
+                <!-- 操作提示 -->
+                <div class="instructions">
+                    <h3>操作说明</h3>
+                    <ul>
+                        <li>← → 左右移动</li>
+                        <li>↑ 旋转方块</li>
+                        <li>↓ 加速下落</li>
+                        <li>空格 直接落下</li>
+                        <li>P 暂停/继续</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 游戏结束遮罩 -->
+        <div class="game-over-overlay" id="gameOverOverlay">
+            <div class="game-over-content">
+                <h2>游戏结束</h2>
+                <p>最终得分: <span id="finalScore">0</span></p>
+                <button id="playAgainBtn" class="btn btn-start">再玩一次</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
